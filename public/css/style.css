@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+/* -------------- Reset style ----------------- */
+* {box-sizing: border-box;}
+body {font-family: 'Raleway', sans-serif;}
+h1, h2, h3, h4, h5, h6, p {margin-top: 0;margin-bottom: 0;}
+ul {margin-top: 0;margin-bottom: 0;padding-left: 0;list-style: none;}
+img {display: block;max-width: 100%;height: auto;user-select: none;}
+/* -------------------------------------------- */
+/* ---------------- Basic style --------------- */
+:root {
+    --black: #0E0E0F;
+    --black-translucent: #0e0e0f8a;
+}
+.container {
+    width: 85%;
+    display: flex;
+    margin: 100px auto;
+    justify-content: space-between;
+}
+.mini-container {width: 41%;}
+.logo {
+    position: fixed;
+    top: 47%;
+    right: 47%;
+    font-size: 27px;
+    font-weight: 300;
+}
+.logo::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    top: 100%;
+    right: 19%;
+    background-color: #0e0e0f3a;
+    width: 65%;
+}
+.button {
+    padding: 16px 0;
+    width: 100%;
+    border: solid 1px var(--black);
+    color: var(--black);
+    border-radius: 16px;
+    background-color: transparent;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button:hover {
+    background-color: var(--black);
+    color: white;
+}
+.mini-buttons {
+    display: flex;
+    gap: 7px;
+}
+.mini-button {
+    background-color: var(--black);
+    border: solid 1px var(--black);
+    stroke: white;
+    padding: 16px 17px 14px;
+    transition: 0.3s;
+    cursor: pointer;
+    width: 17px;
+    border-radius: 17px;
+}
+.mini-button:hover {
+    background-color: transparent;
+    stroke: var(--black);
+}
+.mini-button__stroke {
+    background-color: transparent;
+    stroke: var(--black);
+    border-radius: 17px;
+}
+.mini-button__stroke:hover {
+    background-color: var(--black);
+    stroke: white;
+}
+/* --------- Form ---------- */
+form {display: block;}
+/* -------- Inputes -------- */
+input[type="text"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px var(--black);
+    padding: 7px 12px;
+    width: 100%;
+    font-size: 17px;
+    margin-top: 31px;
+}
+input {outline: none;}
+/* --------- Task ---------- */
+.tasks {
+    margin-top: 65px;
+}
+.task {
+    padding: 25px 80px;
+    width: 100%;
+    border: solid 1px var(--black);
+    border-radius: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 21px;
+}
+.task-completed {border: solid 1px var(--black-translucent);}
+.task__title {
+    margin-bottom: 5px;
+    font-size: 27px;
+    font-weight: bold;
+    color: var(--black);
+}
+.task__description {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--black);
+}
+.task-completed__title {color: var(--black-translucent);}
+.tas-completedk__description {color: var(--black-translucent);}
+/* -------- Footer --------- */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(21px);
+}
+footer h3 {
+    font-size: 12;
+    font-weight: 400;
+}
+/* ~~~~~~~~~~ Scroll bar ~~~~~~~~~~ */
+/* Webkit (Safari/Chrome) */
+::-webkit-scrollbar {
+    width: 6px;
+    background: #c7c7c7;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--black); /* Колір самого скроллбару */
+    border-radius: 5px;
+    transition: 0.2s;
+}
+/* Firefox */
+::-moz-scrollbar {
+    width: 6px;
+    background: #c7c7c7;
+}
+::-moz-scrollbar-thumb {
+    background: var(--black); /* Колір самого скроллбару */
+    border-radius: 5px;
+}
+/* Internet Explorer/Edge */
+body {
+    scrollbar-width: thin; /* 'thin', 'auto', або 'none' */
+    scrollbar-color: var(--black); /* Колір самого скроллбару */
+}
+
+/* Webkit (Safari/Chrome) */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #212124; /* Колір фону скроллбару при наведенні */
+}
+/* Firefox */
+::-moz-scrollbar-thumb:hover {
+    background-color: #212124; /* Колір фону скроллбару при наведенні */
+}
+/* Internet Explorer/Edge */
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #212124; /* Колір фону скроллбару при наведенні */
+}
+/* ~~~~~~~~ Scroll animation ~~~~~~ */
+.scroll-animation {
+    transform: translateX(-45px);
+    opacity: 0;
+}
+.scroll-animation.scroll-animation__show {
+    transform: translateX(0px);
+    opacity: 1;
+    transition: all 0.5s;
+}
+/* ~~~~~~~~~~ Modal window ~~~~~~~~ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+.modal__content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 23px 25px;
+    width: 535px;
+    border-radius: 12px;
+    height: fit-content;
+}
+.modal__close {
+    margin-top: -12px;
+    color: var(--black);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal__close:hover {
+    color: black;
+}
